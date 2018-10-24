@@ -30,7 +30,6 @@ class Inventory extends React.Component {
   authHandler = async authData => {
     const store = await base.fetch(this.props.storeId, { context: this });
 
-    console.log(store);
     if (!store.owner) {
       await base.post(`${this.props.storeId}/owner`, {
         data: authData.user.uid
